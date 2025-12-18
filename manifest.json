@@ -1,0 +1,13 @@
+{
+  "name": "Daily Check-In with the Love of my Life",
+  "short_name": "Daily Check-In",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#140824",
+  "theme_color": "#140824",
+  "description": "A private couple calendar where you both upload a photo each day.",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
