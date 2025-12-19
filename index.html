@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Check-In with my Wife ❤️</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#ff86bf" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+</head>
+<body>
+  <div class="heartsLayer" id="heartsLayer" aria-hidden="true"></div>
+  <header class="top">
+    <div class="brand">
+      <h1>Daily Check-In with my Wife ❤️</h1>
+      <div class="loveHeaderPoem" id="lovePoem" aria-live="polite"></div>
+      <p class="sub">Tap a day → take a photo → both of you see it</p>
+    </div>
+
+    <div class="status">
+      <span id="statusDot" class="dot" aria-hidden="true"></span>
+      <span id="statusText" class="muted">Connecting…</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+<section class="actions card">
+      <div class="roleRow" role="group" aria-label="Choose who is checking in">
+        <button id="roleH" class="btn role active" type="button">Husband check‑in</button>
+        <button id="roleW" class="btn role" type="button">Wife check‑in</button>
+        <button id="reviewBtn" class="btn subtle" type="button">Year in review</button>
+        <a class="btn subtle" href="./setup.html" style="text-decoration:none;">Setup</a>
+      </div>
+
+      <div class="controls">
+        <div class="ctrl">
+          <label for="monthSel">Month</label>
+          <select id="monthSel"></select>
+        </div>
+        <div class="ctrl">
+          <label for="yearSel">Year</label>
+          <select id="yearSel"></select>
+        </div>
+
+        <div class="ctrl">
+          <button id="todayBtn" class="btn subtle" type="button">Go to today</button>
+        </div>
+      </div>
+
+      <p class="hint muted">
+        Selected role: <strong id="roleLabel">Husband</strong> · Tap any date to add/replace that role’s photo.
+      </p>
+
+      <p id="setupWarn" class="muted" style="margin-top:10px;"></p>
+    </section>
+
+    <section class="calendar card">
+      <div class="dow">
+        <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+      </div>
+      <div id="grid" class="grid" aria-label="Calendar"></div>
+
+      <div class="legend">
+        <span class="chip"><span class="mini husband"></span> Husband photo</span>
+        <span class="chip"><span class="mini wife"></span> Wife photo</span>
+      </div>
+    </section>
+
+    <section id="reviewSection" class="card review hidden" aria-label="Year in Review">
+      <div class="reviewTop">
+        <div class="reviewTopLeft">
+        <button id="reviewBackBtn" class="btn subtle" type="button">← Back to calendar</button>
+        <button id="exportPdfBtn" class="btn" type="button">Export PDF</button>
+      </div>
+        <div class="reviewTitle">
+          <div class="muted" style="font-size:.85rem;">Year in Review</div>
+          <div class="reviewYear"><span id="reviewYearLabel">—</span> ✨</div>
+        </div>
+      </div>
+
+      <div class="reviewStats" id="reviewStats">
+        <div class="statCard">
+          <div class="muted">Both checked‑in</div>
+          <div class="statNum" id="statBoth">—</div>
+        </div>
+        <div class="statCard">
+          <div class="muted">Total photos</div>
+          <div class="statNum" id="statPhotos">—</div>
+        </div>
+        <div class="statCard">
+          <div class="muted">Longest “both” streak</div>
+          <div class="statNum" id="statLongest">—</div>
+        </div>
+        <div class="statCard">
+          <div class="muted">Most active month</div>
+          <div class="statNum" id="statBestMonth">—</div>
+        </div>
+      </div>
+
+      <div class="reviewBlock">
+        <div class="reviewBlockTitle">Monthly heatmap</div>
+        <div id="reviewHeatmap" class="heatmap"></div>
+      </div>
+
+      <div class="reviewBlock">
+        <div class="reviewBlockTitle">Memory reel</div>
+        <div class="muted" style="font-size:.9rem;margin:6px 0 10px;">A few moments where you both checked‑in. Tap to view.</div>
+        <div id="reviewReel" class="reel" aria-label="Memory reel"></div>
+      </div>
+    </section>
+
+
+  <div id="printArea" class="printArea" aria-hidden="true"></div>
+</main>
+
+  <input id="cameraInput" class="hidden" type="file" accept="image/*" capture="environment" />
+
+  <script type="module" src="./app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</body>
+</html>
