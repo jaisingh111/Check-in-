@@ -407,62 +407,14 @@ header .title {
 .toast.show{opacity:1}
 
 
-/* Notes inside photo viewer */
-.dc-notes{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:12px;
-  margin-top:12px;
-  padding-top:12px;
-  border-top:1px solid rgba(255,255,255,0.08);
-}
-.dc-note-col{
-  background:rgba(0,0,0,0.18);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:14px;
-  padding:10px;
-}
-.dc-note-label{
-  font-weight:700;
-  font-size:13px;
-  opacity:0.95;
-  margin-bottom:6px;
-}
-.dc-note-text{
-  width:100%;
-  resize:vertical;
-  min-height:72px;
-  border-radius:12px;
-  padding:10px;
-  border:1px solid rgba(255,255,255,0.10);
-  background:rgba(0,0,0,0.18);
-  color:inherit;
-  outline:none;
-}
-.dc-note-read{
-  white-space:pre-wrap;
-  word-break:break-word;
-  font-size:13px;
-  line-height:1.35;
-  opacity:0.95;
-}
-.dc-note-btn{
-  margin-top:8px;
-  width:100%;
-  padding:9px 10px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.10);
-  background:rgba(255,255,255,0.10);
-  color:inherit;
-  font-weight:700;
-}
-.dc-note-btn:disabled{opacity:0.65;}
-.dc-note-hint{
-  margin-top:6px;
-  font-size:11px;
-  opacity:0.7;
-}
-@media (max-width: 640px){
-  .dc-notes{grid-template-columns: 1fr;}
-}
-
+/* --- Notes in photo viewer --- */
+.dc-notes{ margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,.10); }
+.dc-notes-title{ font-weight:700; margin-bottom:10px; }
+.dc-note-card{ background:rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.10); border-radius:14px; padding:10px; margin-bottom:10px; }
+.dc-note-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px; }
+.dc-note-label{ font-weight:600; opacity:.95; }
+.dc-note-save{ padding:8px 12px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.10); color:#fff; font-weight:600; }
+.dc-note-save:disabled{ opacity:.6; }
+.dc-note-text{ width:100%; min-height:92px; resize:vertical; border-radius:12px; padding:10px; border:1px solid rgba(255,255,255,.12); background:rgba(0,0,0,.20); color:#fff; outline:none; }
+.dc-note-text--readonly{ opacity:.85; }
+.dc-note-status{ margin-top:6px; font-size:12px; opacity:.9; min-height:16px; }
