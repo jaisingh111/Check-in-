@@ -1,4 +1,4 @@
-const CACHE = "cc-checkin-v18";
+const CACHE = "cc-checkin-v21";
 const ASSETS = [
   "./",
   "./index.html",
