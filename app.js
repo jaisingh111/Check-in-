@@ -629,19 +629,13 @@ function renderCalendar(){
 }
 
 function monthStartEnd() {
-  // viewMonth is 0-based (0=Jan ... 11=Dec)
-  const startDate = new Date(viewYear, viewMonth, 1);
-  // last day of this month: day 0 of next month
-  const endDate = new Date(viewYear, viewMonth + 1, 0);
-
-  const toId = (d) => {
-    const y = d.getFullYear();
-    const m = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    return `${y}-${m}-${day}`;
-  };
-
-  return { startId: toId(startDate), endId: toId(endDate) };
+   const first = new Date(viewYear, viewMonth, 1);
+  const jsDow = first.getDay();
+  const mondayIndex = (jsDow + 6) % 7;
+  const start = new Date(viewYear, viewMonth, 1 - mondayIndex);
+  const end = new Date(start);
+  end.setDate(start.getDate() + 41);
+  return { startId: dayIdFromDate(start), endId: dayIdFromDate(end) };
 }
 
 
